@@ -28,7 +28,9 @@ services:
       - postgres
       - redis
   postgres:
-    image: postgres
+    build:
+      context: .
+      dockerfile: DockerfileDB
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
